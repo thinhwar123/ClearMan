@@ -1,0 +1,59 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - Wind
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - 
+  - 
+  - Ground
+  - Player
+  - Wind
+  - PhysicalObject
+  - BlockObject
+  - WeakObject
+  - Bullet
+  - WaterCheck
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: Ground
+    uniqueID: 1223565461
+    locked: 0
+  - name: Object
+    uniqueID: 3064173367
+    locked: 0
+  - name: Effect
+    uniqueID: 2709894561
+    locked: 0
+  - name: Player
+    uniqueID: 1726111647
+    locked: 0
+  - name: UI
+    uniqueID: 4292635143
+    locked: 0
