@@ -36,9 +36,11 @@ public class BurstAbility : CharacterAbility
     IEnumerator Delay()
     {
         characterMovement.isUnlock = false;
+        LockAbility();
         rb.velocity = Vector2.zero;
         yield return new WaitForSeconds(0.5f);
         characterMovement.isUnlock = true;
+        UnlockAbility();
         yield return new WaitForSeconds(delayTime - 0.5f);
         isBurst = true;
     }

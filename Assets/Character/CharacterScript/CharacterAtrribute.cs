@@ -21,7 +21,10 @@ public class CharacterAtrribute : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.L))
         {
             TakeDame(1 , Vector2.left);
-            //ani.GetComponent<SpriteRenderer>().DOColor(new Color(0.8f,0.8f,0.8f), timeStop).SetLoops(10, LoopType.Yoyo);
+        }
+        if (Input.GetKeyDown(KeyCode.K))
+        {
+            GetComponent<StunStatus>().Trigger(2);
         }
     }
     public void TakeDame(int damage, Vector2 dir)

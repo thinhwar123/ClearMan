@@ -6805,7 +6805,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d012ee5d23c22ba4c98df570c2ecf6a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  listLockAbility: []
+  listLockAbility:
+  - {fileID: 777811069}
+  - {fileID: 777811070}
+  - {fileID: 777811068}
+  - {fileID: 777811072}
+  - {fileID: 777811073}
+  - {fileID: 777811074}
+  - {fileID: 777811076}
+  - {fileID: 777811078}
+  - {fileID: 777811077}
+  - {fileID: 777811087}
+  - {fileID: 777811086}
+  - {fileID: 777811085}
+  - {fileID: 777811079}
+  - {fileID: 777811080}
+  - {fileID: 777811082}
+  - {fileID: 777811088}
+  - {fileID: 777811083}
+  - {fileID: 777811084}
 --- !u!1 &858378460
 GameObject:
   m_ObjectHideFlags: 0
@@ -7098,7 +7116,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.96, y: 0.96}
+  m_Size: {x: 1.6, y: 1.6}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -17529,7 +17547,7 @@ SpriteRenderer:
   m_SortingLayerID: 1726111647
   m_SortingLayer: 4
   m_SortingOrder: 2
-  m_Sprite: {fileID: -4289587451554402535, guid: 7a9d69fb3d4420f4cb6318ee3933fc17,
+  m_Sprite: {fileID: 8011213867452577509, guid: 7103f2ead4a35c243b9de220efaec17c,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -17549,7 +17567,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1878180403}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 1.308, y: 0.392, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1777241421}
