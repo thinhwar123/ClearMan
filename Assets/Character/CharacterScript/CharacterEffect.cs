@@ -13,6 +13,7 @@ public class CharacterEffect : MonoBehaviour
     [SerializeField] private ParticleSystem jumpEffect;
     [SerializeField] private ParticleSystem wallSlideEffect;
     [SerializeField] private GameObject explosionEffect;
+    [SerializeField] private List< ParticleSystem> hurtEffect;
     public void Start()
     {
         ani = GetComponent<Animator>();
@@ -57,5 +58,13 @@ public class CharacterEffect : MonoBehaviour
     public void ExplosionEffect()
     {
         Instantiate(explosionEffect, transform.parent.parent.position, Quaternion.identity);
+    }
+    public void HurtEffect()
+    {
+        foreach (ParticleSystem item in hurtEffect)
+        {
+            item.Play();
+        }
+        
     }
 }

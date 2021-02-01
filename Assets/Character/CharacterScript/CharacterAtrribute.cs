@@ -5,10 +5,10 @@ using DG.Tweening;
 public class CharacterAtrribute : MonoBehaviour
 {
     [Header("Stats")]
-    [SerializeField] public int maxHitPoint;
-    [SerializeField] public int maxManaPoint;
-    [SerializeField] public int curHitPoint;
-    [SerializeField] public int curManaPoint;
+    [SerializeField] public float maxHitPoint;
+    [SerializeField] public float maxManaPoint;
+    [SerializeField] public float curHitPoint;
+    [SerializeField] public float curManaPoint;
     [SerializeField] public bool isUnavailable;
     private bool isWaitting;
     void Awake()
@@ -20,26 +20,26 @@ public class CharacterAtrribute : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.L))
         {
-            TakeDame(1 , Vector2.left);
+            //TakeDame(1 , Vector2.left);
         }
         if (Input.GetKeyDown(KeyCode.K))
         {
             GetComponent<StunStatus>().Trigger(2);
         }
     }
-    public void TakeDame(int damage, Vector2 dir)
+    public void TakeDame(AttackDetails attackDetails)
     {
-        if (isUnavailable)
+        if (!isUnavailable)
         {
-            return;
+            curHitPoint -= attackDetails.attackDamage;
+            GetComponent<HurtStatus>().Trigger(attackDetails.position);
+            if (curHitPoint <= 0)
+            {
+                curHitPoint = 0;
+                Death();
+            }
         }
-        curHitPoint -= damage;
-        GetComponent<HurtStatus>().Trigger(2, dir);
-        if (curHitPoint <=0 )
-        {
-            curHitPoint = 0;
-            Death();
-        }
+
 
     }
     public void Heal(int hitPoint)

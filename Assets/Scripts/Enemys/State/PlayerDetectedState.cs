@@ -7,7 +7,8 @@ public class PlayerDetectedState : State
     protected D_PlayerDetectedState stateData;
     protected bool isPlayerInMinAgroRange;
     protected bool isPlayerInMaxAgroRange;
-    protected bool preformLongRangeAction;
+    protected bool preformLongRangeAction; // het thoi gian quyet dinh (ko phai bien check)
+    protected bool preformCloseRangeAction;
 
     public PlayerDetectedState(Entity entity, FinteStateMachine stateMachine, string animBoolName, D_PlayerDetectedState stateData) : base(entity, stateMachine, animBoolName)
     {
@@ -20,6 +21,8 @@ public class PlayerDetectedState : State
         base.DoCheck();
         isPlayerInMinAgroRange = entity.CheckPlayerInMinAgroRange();
         isPlayerInMaxAgroRange = entity.CheckPlayerInMaxAgroRange();
+
+        preformCloseRangeAction = entity.CheckPlayerInCloseRangeAction();
     }
 
     public override void Enter()

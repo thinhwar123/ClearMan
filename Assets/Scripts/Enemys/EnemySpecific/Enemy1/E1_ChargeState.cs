@@ -32,11 +32,19 @@ public class E1_ChargeState : ChargeState
         {
             stateMachine.ChangeState(enemy.lookForPlayerState);
         }
+        else if (preformCloseRangeAction)
+        {
+            stateMachine.ChangeState(enemy.meleeAttackState);
+        }
         else if (isChargeTimeOver)
         {
             if (isPlayerInMinAgroRange)
             {
                 stateMachine.ChangeState(enemy.playerDetectedState);
+            }
+            else 
+            {
+                stateMachine.ChangeState(enemy.lookForPlayerState);
             }
         }
     }

@@ -10,18 +10,24 @@ public class Entity : MonoBehaviour
     public Rigidbody2D rb { get; private set; }
     public Animator ani { get; private set; }
     public GameObject aliveGO { get; private set; }
+
+    public AnimationToStateMachine atsm { get; private set; }
     [SerializeField] private Transform wallCheck;
     [SerializeField] private Transform ledgeCheck;
     [SerializeField] private Transform playerCheck;
+    [SerializeField] private float curHealth;
     [SerializeField] private bool isDetectingWall;
     [SerializeField] private bool isDetectingLedge;
     private Vector2 velocityWorkspace;
     public virtual void Start()
     {
         facingDirection = -1;
+        curHealth = entityData.maxHealth;
         aliveGO = transform.Find("AliveGO").gameObject;
         rb = aliveGO.GetComponent<Rigidbody2D>();
         ani = aliveGO.GetComponent<Animator>();
+        atsm = aliveGO.GetComponent<AnimationToStateMachine>();
+
         stateMachine = new FinteStateMachine();
     }
     public virtual void Update()
@@ -31,6 +37,15 @@ public class Entity : MonoBehaviour
     public virtual void FixedUpdate()
     {
         stateMachine.currentState.PhysicUpdate();
+    }
+    public virtual void TakeDame(AttackDetails attackDetails)
+    {
+        curHealth -= attackDetails.attackDamage;
+    }
+    public virtual void SetVelocity(float velocity, Vector2 direction)
+    {
+        velocityWorkspace.Set(direction.x * velocity, direction.y);
+        rb.velocity = velocityWorkspace;
     }
     public virtual void SetVelocity(float velocity)
     {
@@ -54,6 +69,10 @@ public class Entity : MonoBehaviour
     public virtual bool CheckPlayerInMaxAgroRange()
     {
         return Physics2D.Raycast(playerCheck.position, Vector2.right * facingDirection, entityData.maxAgroDistance, entityData.whatIsPlayer);
+    }
+    public virtual bool CheckPlayerInCloseRangeAction()
+    {
+        return Physics2D.Raycast(playerCheck.position, Vector2.right * facingDirection, entityData.closeRangeAction, entityData.whatIsPlayer);
     }
     public virtual void Flip()
     {

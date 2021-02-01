@@ -24,12 +24,17 @@ public class E1_PlayerDetectedState : PlayerDetectedState
     public override void LogicUpdate()
     {
         base.LogicUpdate();
-        if (preformLongRangeAction)
+        if (preformCloseRangeAction)
+        {
+            stateMachine.ChangeState(enemy.meleeAttackState);
+        }
+        else if (preformLongRangeAction)
         {
             stateMachine.ChangeState(enemy.chargeState);
         }
         else if (!isPlayerInMaxAgroRange)
         {
+            enemy.lookForPlayerState.SetTurnImediately(true);
             stateMachine.ChangeState(enemy.lookForPlayerState);
         }
     }

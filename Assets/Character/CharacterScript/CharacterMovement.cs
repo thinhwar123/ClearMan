@@ -31,19 +31,11 @@ public class CharacterMovement : MonoBehaviour
         {
             return;
         }
-        //if (directionMovement.x >0)
-        //{
-        //    transform.localScale =Vector3.one;
-        //}
-        //else if (directionMovement.x < 0)
-        //{
-        //    transform.localScale = new Vector3(-1, 1, 1);
-        //}
-        if (rb.velocity.x > 0)
+        if (directionMovement.x > 0)
         {
             transform.localScale = Vector3.one;
         }
-        else if (rb.velocity.x < 0)
+        else if (directionMovement.x < 0)
         {
             transform.localScale = new Vector3(-1, 1, 1);
         }
@@ -56,8 +48,7 @@ public class CharacterMovement : MonoBehaviour
         }
         if (directionMovement.x != 0)
         {
-            ani.SetBool("isRun", true);
-            
+            ani.SetBool("isRun", true);            
         }
         else
         {
