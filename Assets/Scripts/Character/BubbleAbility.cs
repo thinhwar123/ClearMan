@@ -23,7 +23,7 @@ public class BubbleAbility : CharacterAbility
     }
     protected override void Update()
     {
-        if (swimAbility.isSwim)
+        if (swimAbility.isSwim  && isUnlock)
         {
             if (!body.isTrigger)
             {
@@ -32,6 +32,7 @@ public class BubbleAbility : CharacterAbility
                     body.isTrigger = true;
                     rb.gravityScale = 0;
                     isBubble = true;
+                    LockAbility();
                     ani.SetBool("isBubble", true) ;
                 }
             }
@@ -51,6 +52,7 @@ public class BubbleAbility : CharacterAbility
                         body.isTrigger = false;
                         rb.gravityScale = normalGravity;
                         isBubble = false;
+                        UnlockAbility();
                         ani.SetBool("isBubble", false);
                     }
                 }
@@ -65,6 +67,7 @@ public class BubbleAbility : CharacterAbility
                 body.isTrigger = false;
                 rb.gravityScale = normalGravity;
                 isBubble = false;
+                UnlockAbility();
                 ani.SetBool("isBubble", false);
             }
             else

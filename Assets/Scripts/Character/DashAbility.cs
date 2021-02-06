@@ -46,9 +46,10 @@ public class DashAbility : CharacterAbility
     {
         StopCoroutine(dashIenumrator);
         rb.gravityScale = normalGravity;
+        rb.velocity = Vector2.zero;
         isDash = false;
         ani.SetBool("isDash", false);
-        //characterMovement.isUnlock = true;
+        characterMovement.isUnlock = true;
         UnlockAbility();
     }
     IEnumerator Dash()
