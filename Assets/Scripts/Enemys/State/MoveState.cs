@@ -25,8 +25,7 @@ public class MoveState : State
     public override void Enter()
     {
         base.Enter();
-        entity.SetVelocity(stateData.movementSpeed);
-
+        entity.atsm.moveState = this;
     }
 
     public override void Exit()
@@ -43,5 +42,13 @@ public class MoveState : State
     public override void PhysicUpdate()
     {
         base.PhysicUpdate();
+    }
+    public virtual void TriggerMove()
+    {
+
+    }
+    public virtual void FinishMove()
+    {
+
     }
 }

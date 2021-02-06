@@ -32,11 +32,12 @@ public class E1_HurtState : HurtState
         base.LogicUpdate();
         if (isHurtTimeOver)
         {
-            if (preformCloseRangeAction)
-            {
-                stateMachine.ChangeState(enemy.meleeAttackState);
-            }
-            else if (isPlayerInMaxAgroRange)
+            //if (preformCloseRangeAction)
+            //{
+            //    stateMachine.ChangeState(enemy.meleeAttackState);
+            //}
+            //else 
+            if (isPlayerInMaxAgroRange)
             {
                 stateMachine.ChangeState(enemy.playerDetectedState);
             }

@@ -6,6 +6,7 @@ public class ChargeState : State
 {
     protected D_ChargeState stateData;
     protected bool isPlayerInMinAgroRange;
+    protected bool isPlayerInMaxAgroRange;
     protected bool isDetectingWall;
     protected bool isDetectingLegde;
     protected bool isChargeTimeOver;
@@ -19,6 +20,7 @@ public class ChargeState : State
     {
         base.DoCheck();        
         isPlayerInMinAgroRange = entity.CheckPlayerInMinAgroRange();
+        isPlayerInMaxAgroRange = entity.CheckPlayerInMaxAgroRange();
         isDetectingWall = entity.CheckWall();
         isDetectingLegde = entity.CheckLedge();
         preformCloseRangeAction = entity.CheckPlayerInCloseRangeAction();
@@ -27,7 +29,7 @@ public class ChargeState : State
     public override void Enter()
     {
         base.Enter();
-        entity.SetVelocity(stateData.chargeSpeed);
+
         isChargeTimeOver = false;
     }
 

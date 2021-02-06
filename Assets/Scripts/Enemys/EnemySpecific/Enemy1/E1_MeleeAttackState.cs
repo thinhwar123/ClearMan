@@ -19,6 +19,7 @@ public class E1_MeleeAttackState : MeleeAttack
     public override void Enter()
     {
         base.Enter();
+        enemy.SetVelocity(stateData.speedWhileAttacl, new Vector2(enemy.facingDirection * stateData.attackDirection.x, stateData.attackDirection.y));
     }
 
     public override void Exit()
@@ -56,6 +57,7 @@ public class E1_MeleeAttackState : MeleeAttack
 
     public override void TriggerAttack()
     {
+
         base.TriggerAttack();
     }
 }

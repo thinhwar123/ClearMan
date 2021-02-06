@@ -8,7 +8,7 @@ public class D_Entity : ScriptableObject
     public float maxHealth = 30;
 
     public float wallCheckDistance = 0.2f;
-    public float ledgeCheckDistance = 0.4f;
+    public float ledgeCheckDistance = 0.2f;
 
     public float maxAgroDistance = 4;
     public float minAgroDistance = 3;
