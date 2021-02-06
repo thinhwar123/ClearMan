@@ -12,7 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d27d738c7d1da24198e5623467ea1a6, type: 3}
   m_Name: E1_MelleAttackData
   m_EditorClassIdentifier: 
-  attackRadius: 0.5
+  attackDirection: {x: 1, y: 3}
+  speedWhileAttacl: 4.94
+  attackRadius: 0.7
   attackDamage: 1
   whatIsPlayer:
     serializedVersion: 2

@@ -14,6 +14,7 @@ public class E1_PlayerDetectedState : PlayerDetectedState
     {
 
         base.Enter();
+        entity.SetVelocity(0);
     }
 
     public override void Exit()
@@ -24,19 +25,23 @@ public class E1_PlayerDetectedState : PlayerDetectedState
     public override void LogicUpdate()
     {
         base.LogicUpdate();
-        if (preformCloseRangeAction)
+        if (preformLongRangeAction)
         {
-            stateMachine.ChangeState(enemy.meleeAttackState);
+            if (preformCloseRangeAction)
+            {
+                stateMachine.ChangeState(enemy.meleeAttackState);
+            }
+            else if (isPlayerInMaxAgroRange)
+            {
+                stateMachine.ChangeState(enemy.chargeState);
+            }
+            else if (!isPlayerInMaxAgroRange)
+            {
+                enemy.lookForPlayerState.SetTurnImediately(true);
+                stateMachine.ChangeState(enemy.lookForPlayerState);
+            }
         }
-        else if (preformLongRangeAction)
-        {
-            stateMachine.ChangeState(enemy.chargeState);
-        }
-        else if (!isPlayerInMaxAgroRange)
-        {
-            enemy.lookForPlayerState.SetTurnImediately(true);
-            stateMachine.ChangeState(enemy.lookForPlayerState);
-        }
+
     }
 
     public override void PhysicUpdate()

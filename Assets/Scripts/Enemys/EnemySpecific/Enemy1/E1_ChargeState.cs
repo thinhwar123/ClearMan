@@ -18,6 +18,7 @@ public class E1_ChargeState : ChargeState
     public override void Enter()
     {
         base.Enter();
+        entity.SetVelocity(stateData.chargeSpeed);
     }
 
     public override void Exit()
