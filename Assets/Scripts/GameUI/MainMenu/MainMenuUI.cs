@@ -2,32 +2,34 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MainMenuUI : UIElement
+public class MainMenuUI : MonoBehaviour
 {
-    public override void EndUI()
-    {
-        base.EndUI();
-    }
+    [SerializeField] private int curPageIndex;
+    [SerializeField] private List<PageUI> pageList;
 
-    public override void Start()
+    public bool isActive { get; private set; }
+    private void Start()
     {
-        base.Start();
-
+        isActive = false;
+        curPageIndex = 0;
+        DataGlobe.instance.inputHandler.ChangeActionMap("UI");
     }
-
-    public override void StartUI()
+    public void ChangePage(int pageIndex)
     {
-        base.StartUI();
+        StartCoroutine(ChangePageCoroutine(pageIndex));
     }
-
-    public override void Update()
+    IEnumerator ChangePageCoroutine(int pageIndex)
     {
-        base.Update();
+        isActive = false;
+        pageList[curPageIndex].EndPage();
+        curPageIndex = pageIndex;
+        yield return new WaitForSecondsRealtime(0.3f);
+        pageList[curPageIndex].StartPage();
+        yield return new WaitForSecondsRealtime(0.3f);
+        isActive = true;
     }
-    public void ChangeUIElement(int indexUIElement)
+    public void UpdatePage(int pageIndex)
     {
-        curUIElement.EndUI();
-        curUIElement = elements[indexUIElement];
-        curUIElement.StartUI();
+        pageList[pageIndex].UpdatePage();
     }
 }

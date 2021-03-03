@@ -40,7 +40,7 @@ public class E4_MoveState : MoveState
     public override void LogicUpdate()
     {
         base.LogicUpdate();
-        enemy.aliveGO.GetComponent<Animator>().SetFloat("velocityY", enemy.aliveGO.GetComponent<Rigidbody2D>().velocity.y);
+        enemy.GetComponent<Animator>().SetFloat("velocityY", enemy.GetComponent<Rigidbody2D>().velocity.y);
 
         if (isEndJump )
         {

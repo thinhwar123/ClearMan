@@ -8,7 +8,7 @@ public class HitObject : MonoBehaviour
     private Entity entity;
     public void Start()
     {
-        entity = transform.parent.parent.GetComponent<Entity>();
+        entity = transform.parent.GetComponent<Entity>();
     }
     public void OnCollisionEnter2D(Collision2D collision)
     {

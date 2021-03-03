@@ -19,7 +19,7 @@ public class E3_ChargeState : ChargeState
     public override void Enter()
     {
         base.Enter();
-        Vector2 dir = (enemy.player.transform.position - enemy.aliveGO.transform.position).normalized;
+        Vector2 dir = (enemy.player.transform.position - enemy.transform.position).normalized;
         enemy.Flip(dir.x > 0 ? 1 : -1);
         enemy.SetVelocity(stateData.chargeSpeed, dir, true);
     }

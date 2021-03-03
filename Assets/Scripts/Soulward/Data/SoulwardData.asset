@@ -1,0 +1,43 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0fb86310547578648aa70850304137d7, type: 3}
+  m_Name: SoulwardData
+  m_EditorClassIdentifier: 
+  appearTime: 0.1
+  disappearTime: 0.1
+  movementSpeed: 2
+  distance: 1
+  easeX: 4
+  easeY: 3
+  spriteList:
+  - {fileID: 21300000, guid: 2e348cb20b73cac4cb50dc91adbefbea, type: 3}
+  - {fileID: 21300000, guid: e64d223ae4bd36640a10f651f7ae3a67, type: 3}
+  - {fileID: 21300000, guid: e44638271c96a9e4f80659a4104962ad, type: 3}
+  - {fileID: -1895644030829859336, guid: 76f1a43b9c6112e4598f29f96727a1e2, type: 3}
+  - {fileID: 21300000, guid: 16b4d64dbda35024fa5e65ac159646d1, type: 3}
+  - {fileID: -8036192686628341352, guid: b49e9dd75125c5e4ab384f1552f171a2, type: 3}
+  - {fileID: -1768999604079927155, guid: 76f1a43b9c6112e4598f29f96727a1e2, type: 3}
+  - {fileID: -3026698213285702824, guid: b49e9dd75125c5e4ab384f1552f171a2, type: 3}
+  colorList:
+  - {r: 0.9333334, g: 0.9333334, b: 0.9333334, a: 1}
+  - {r: 0.7960785, g: 0.8588236, b: 0.98823535, a: 1}
+  - {r: 1, g: 0.9333334, b: 0.5137255, a: 1}
+  - {r: 0.16862746, g: 0.6862745, b: 0.16862746, a: 1}
+  - {r: 0.30980393, g: 0.6431373, b: 0.72156864, a: 1}
+  - {r: 1, g: 0.32156864, b: 0.4666667, a: 1}
+  intensity: 1
+  distanceAimTeleport: 1
+  shootVelocity: 20
+  timeTravel: 0.5
+  whatIsGround:
+    serializedVersion: 2
+    m_Bits: 256

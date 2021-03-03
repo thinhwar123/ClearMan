@@ -39,7 +39,7 @@ public class Enemy4 : Entity
         }
         else
         {
-            hurtState.SetKnockBackDirection(aliveGO.transform.position.x > attackDetails.position.x);
+            hurtState.SetKnockBackDirection(transform.position.x > attackDetails.position.x);
             stateMachine.ChangeState(hurtState);
         }
     }

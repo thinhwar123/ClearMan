@@ -9,7 +9,7 @@ public class Entity : MonoBehaviour
     public int facingDirection;
     public Rigidbody2D rb { get; private set; }
     public Animator ani { get; private set; }
-    public GameObject aliveGO { get; private set; }
+    //public GameObject aliveGO { get; private set; }
 
     public AnimationToStateMachine atsm { get; private set; }
     [SerializeField] protected Transform wallCheck;
@@ -24,10 +24,9 @@ public class Entity : MonoBehaviour
     {
         facingDirection = -1;
         curHealth = entityData.maxHealth;
-        aliveGO = transform.Find("AliveGO").gameObject;
-        rb = aliveGO.GetComponent<Rigidbody2D>();
-        ani = aliveGO.GetComponent<Animator>();
-        atsm = aliveGO.GetComponent<AnimationToStateMachine>();
+        rb = GetComponent<Rigidbody2D>();
+        ani = GetComponent<Animator>();
+        atsm = GetComponent<AnimationToStateMachine>();
         isDead = false;
         stateMachine = new FinteStateMachine();
     }
@@ -78,11 +77,15 @@ public class Entity : MonoBehaviour
     }
     public virtual void OnHitPlayer()
     {
-
     }
     public virtual void OnHitGround(Collision2D collision)
     {
 
+    }
+    public virtual RaycastHit2D CheckIfTouchingPlayer()
+    {
+        CapsuleCollider2D coll = GetComponent<CapsuleCollider2D>();
+        return Physics2D.CapsuleCast((Vector2)transform.position + coll.offset, coll.size, coll.direction, 0, Vector2.zero, 0 , entityData.whatIsPlayer);
     }
     public virtual bool CheckWall()
     {
@@ -107,14 +110,14 @@ public class Entity : MonoBehaviour
     public virtual void Flip()
     {
         facingDirection *= -1;
-        aliveGO.transform.Rotate(0f, 180f, 0f);
+        transform.Rotate(0f, 180f, 0f);
     }
     public virtual void Flip(int dir)
     {
         if (dir != facingDirection)
         {
             facingDirection = dir;
-            aliveGO.transform.Rotate(0f, 180f, 0f);
+            transform.Rotate(0f, 180f, 0f);
         }
 
     }
@@ -127,6 +130,7 @@ public class Entity : MonoBehaviour
             Gizmos.DrawLine(playerCheck.position + Vector3.down * 0.1f, playerCheck.position + (Vector3)(Vector2.right * facingDirection * entityData.maxAgroDistance) + Vector3.down * 0.1f);
             Gizmos.DrawLine(playerCheck.position, playerCheck.position + (Vector3)(Vector2.right * facingDirection * entityData.closeRangeAction));
             Gizmos.DrawLine(ledgeCheck.position, ledgeCheck.position + (Vector3)(Vector2.down * entityData.ledgeCheckDistance));
+            //Gizmos.DrawWireCube((Vector2)transform.position + GetComponent<CapsuleCollider2D>().offset, GetComponent<CapsuleCollider2D>().size);
         }
 
     }

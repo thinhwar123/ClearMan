@@ -19,7 +19,7 @@ public class E2_DeadState : DeadState
     {
         base.Enter();
         enemy.SetGravity(1);
-        enemy.aliveGO.GetComponent<CapsuleCollider2D>().isTrigger = false;
+        enemy.GetComponent<CapsuleCollider2D>().isTrigger = false;
     }
 
     public override void Exit()

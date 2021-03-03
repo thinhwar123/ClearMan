@@ -1,34 +1,54 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-public class ConfirmDeleteDataButton : Button
+using UnityEngine.EventSystems;
+using UnityEngine.UI;
+using DG.Tweening;
+public class ConfirmDeleteDataButton : Selectable, InteractionUI
 {
-    [SerializeField] protected ConfirmPanel confirmPanel;
-    [SerializeField] protected CanvasGroup choosenEffect;
-    public override void Choose()
+    [SerializeField] private SaveSlotUI saveSlotUI;
+    [SerializeField] private Image icon;
+    private Tween effectTween;
+    public override void OnDeselect(BaseEventData eventData)
     {
-        base.Choose();
-        GetComponent<CanvasGroup>().alpha = 1;
-        choosenEffect.alpha = 1;
+        base.OnDeselect(eventData);
+        effectTween.Kill();
+        effectTween = icon.GetComponent<RectTransform>().DOScale(1, 0.3f);
     }
 
-    public override void Start()
+    public override void OnPointerDown(PointerEventData eventData)
     {
-        base.Start();
+        base.OnPointerDown(eventData);
+        TriggerButton();
     }
 
-    public override void TriggerButton()
+    public override void OnPointerEnter(PointerEventData eventData)
     {
-        base.TriggerButton();
-        DataManager.DeleteData(confirmPanel.slotSavePanel.indexSaveData);
-        confirmPanel.ResetSlotSavePanel();
+        base.OnPointerEnter(eventData);
+        EventSystem.current.SetSelectedGameObject(this.gameObject);
     }
 
-    public override void UnChoose()
+    public override void OnPointerExit(PointerEventData eventData)
     {
-        base.UnChoose();
-        GetComponent<CanvasGroup>().alpha = 0.5f;
-        choosenEffect.alpha = 0;
+        base.OnPointerExit(eventData);
+        EventSystem.current.SetSelectedGameObject(null);
+    }
+
+    public override void OnPointerUp(PointerEventData eventData)
+    {
+        base.OnPointerUp(eventData);
+    }
+
+    public override void OnSelect(BaseEventData eventData)
+    {
+        base.OnSelect(eventData);
+        effectTween.Kill();
+        effectTween = icon.GetComponent<RectTransform>().DOScale(1.3f, 0.3f);
+    }
+
+    public void TriggerButton()
+    {
+        DataGlobe.instance.DeleteData(saveSlotUI.saveSlotIndex);
+        saveSlotUI.ReadData();
     }
 }

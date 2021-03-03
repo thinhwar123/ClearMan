@@ -17,21 +17,21 @@ public class E2_MoveState : MoveState
         base.Enter();
         canTurn = false;
         enemy.SetGravity(0);
-        enemy.aliveGO.GetComponent<CapsuleCollider2D>().isTrigger = true;
+        enemy.GetComponent<CapsuleCollider2D>().isTrigger = true;
 
-        if (enemy.aliveGO.transform.eulerAngles.z == 0)
+        if (enemy.transform.eulerAngles.z == 0)
         {
             directionMove = Vector2.left;
         }
-        else if (enemy.aliveGO.transform.eulerAngles.z == 90)
+        else if (enemy.transform.eulerAngles.z == 90)
         {
             directionMove = Vector2.down;
         }
-        else if (enemy.aliveGO.transform.eulerAngles.z == 180)
+        else if (enemy.transform.eulerAngles.z == 180)
         {
             directionMove = Vector2.right;
         }
-        else if (enemy.aliveGO.transform.eulerAngles.z == 270)
+        else if (enemy.transform.eulerAngles.z == 270)
         {
             directionMove = Vector2.up;
         }
@@ -53,13 +53,13 @@ public class E2_MoveState : MoveState
         else if (isDetectingWall && canTurn)
         {
             canTurn = false;
-            enemy.aliveGO.transform.Rotate(0, 0, -90);
+            enemy.transform.Rotate(0, 0, -90);
             stateMachine.ChangeState(enemy.moveState);
         }
         else if (!isDetectingLedge && canTurn)
         {
             canTurn = false;
-            enemy.aliveGO.transform.Rotate(0 , 0 , 90);
+            enemy.transform.Rotate(0 , 0 , 90);
             stateMachine.ChangeState(enemy.moveState);
         }
     }

@@ -1,32 +1,58 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-public class CreateNewDataButton : Button
+using UnityEngine.UI;
+using DG.Tweening;
+using UnityEngine.EventSystems;
+public class CreateNewDataButton : Selectable, InteractionUI
 {
-    [SerializeField] protected CanvasGroup choosenEffect;
-    [SerializeField] protected SlotSavePanel slotSavePanel;
-    public override void Choose()
+    [SerializeField] SaveSlotUI saveSlotUI;
+    private Tween effectTween;
+    [SerializeField] private CanvasGroup chooseEffect;
+
+    public override void OnDeselect(BaseEventData eventData)
     {
-        base.Choose();
-        choosenEffect.alpha = 1;
+        base.OnDeselect(eventData);
+        effectTween.Kill();
+        effectTween = chooseEffect.DOFade(0, 0.3f);
     }
 
-    public override void Start()
+    public override void OnPointerDown(PointerEventData eventData)
     {
-        base.Start();
+        base.OnPointerDown(eventData);
+        TriggerButton();
     }
 
-    public override void TriggerButton()
+    public override void OnPointerEnter(PointerEventData eventData)
     {
-        base.TriggerButton();
-        DataManager.WriteData(new SaveData(), slotSavePanel.indexSaveData);
-        slotSavePanel.ResetSlotSavePanel(0);
+        base.OnPointerEnter(eventData);
+        EventSystem.current.SetSelectedGameObject(this.gameObject);
     }
 
-    public override void UnChoose()
+    public override void OnPointerExit(PointerEventData eventData)
     {
-        base.UnChoose();
-        choosenEffect.alpha = 0;
+        base.OnPointerExit(eventData);
+        EventSystem.current.SetSelectedGameObject(null);
+    }
+
+    public override void OnPointerUp(PointerEventData eventData)
+    {
+        base.OnPointerUp(eventData);
+    }
+
+    public override void OnSelect(BaseEventData eventData)
+    {
+        base.OnSelect(eventData);
+        effectTween.Kill();
+        effectTween = chooseEffect.DOFade(1, 0.3f);
+    }
+
+    public void TriggerButton()
+    {
+        DataGlobe.instance.CreateNewData(saveSlotUI.saveSlotIndex);
+        DataGlobe.instance.SaveCurData();
+        saveSlotUI.ReadData();
+        //TODO: load scene ngay lap tuc
+        //DataGlobe.instance.LoadScene("Character", true);
     }
 }

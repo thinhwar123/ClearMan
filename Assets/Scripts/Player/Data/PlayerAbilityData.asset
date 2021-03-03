@@ -1,0 +1,88 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34e7de6c82113c2438587846625e2e41, type: 3}
+  m_Name: PlayerAbilityData
+  m_EditorClassIdentifier: 
+  movementVelocity: 10
+  jumpVelocity: 15
+  timeJumpHold: 0.5
+  amountOfJump: 2
+  coyoteTime: 1
+  wallJumpCoyoteTime: 1
+  variableJumpHeightMultiplier: 0.3
+  wallSlideVelocity: 1
+  wallJumpVelocity: 15
+  wallJumpTime: 0.3
+  wallJumpAngle: {x: 1, y: 2}
+  dashVelocity: 25
+  dashTime: 0.2
+  delayBetweenDash: 1
+  soulwardType: 3
+  changeSoulwardTimeScale: 0.1
+  safeUIDistance: 4
+  burstRange: 2
+  whatIsWeakObject:
+    serializedVersion: 2
+    m_Bits: 8192
+  burstDelayTime: 1
+  wingJumpVelocity: 15
+  glideVelocity: 3
+  teleportTimeScale: 0.1
+  aimTimeTeleport: 3
+  delayTimeTeleport: 1
+  arrowTimeScale: 0.1
+  aimTimeArrow: 3
+  delayTimeArrow: 1
+  swimVelocity: 5
+  upForce: 2
+  downForce: 4
+  bubbleVelocityX: 5
+  moveObjectVelocity: 1
+  timeHoldInput: 1
+  bounceForce: 10
+  bounceTime: 0.2
+  hurtTimeScale: 0.1
+  angle: {x: 1, y: 1}
+  pushBackForce: 15
+  unavailableTime: 3
+  timeBetweenHeal: 3
+  healValue: 10
+  manaUseHeal: 10
+  stunTime: 1
+  groundCheckRadius: 0.1
+  wallCheckDistance: 0.4
+  windCheckRadius: 0.1
+  waterCheckRadius: 0.11
+  waterDeepCheckRadius: 0.05
+  physicalObjectCheckDistance: 0.4
+  bounceObjectCheckDistance: 2.5
+  whatIsGround:
+    serializedVersion: 2
+    m_Bits: 256
+  whatIsWind:
+    serializedVersion: 2
+    m_Bits: 1024
+  whatIsWater:
+    serializedVersion: 2
+    m_Bits: 16
+  whatIsPhysicalObject:
+    serializedVersion: 2
+    m_Bits: 2048
+  whatIsEnemy:
+    serializedVersion: 2
+    m_Bits: 65536
+  whatIsBounceObject:
+    serializedVersion: 2
+    m_Bits: 65792
+  whatIsInteractionItem:
+    serializedVersion: 2
+    m_Bits: 131072

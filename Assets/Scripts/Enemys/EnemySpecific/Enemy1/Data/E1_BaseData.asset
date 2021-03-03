@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: E1_BaseData
   m_EditorClassIdentifier: 
   maxHealth: 10
+  hitDame: 1
   wallCheckDistance: 0.4
   ledgeCheckDistance: 0.4
   maxAgroDistance: 7

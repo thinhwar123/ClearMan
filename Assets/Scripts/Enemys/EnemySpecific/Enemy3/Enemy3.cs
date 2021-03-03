@@ -51,7 +51,6 @@ public class Enemy3 : Entity
         base.OnHitGround(collision);
         if (stateMachine.currentState != chargeState)
         {
-            Debug.Log("Hit");
             moveState.SetMoveDirection(collision);
             stateMachine.ChangeState(moveState);
         }

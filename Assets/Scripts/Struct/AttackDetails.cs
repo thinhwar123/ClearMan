@@ -6,4 +6,10 @@ public struct AttackDetails
 {
     public Vector2 position;
     public float attackDamage;
+
+    public AttackDetails(Vector2 position, float attackDamage)
+    {
+        this.position = position;
+        this.attackDamage = attackDamage;
+    }
 }

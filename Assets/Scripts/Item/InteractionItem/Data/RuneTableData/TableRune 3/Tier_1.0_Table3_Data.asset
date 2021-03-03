@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4fddde73ce6caa24fb57eaf8c0cc1b9a, type: 3}
+  m_Name: Tier_1.0_Table3_Data
+  m_EditorClassIdentifier: 
+  type: 2
+  itemName: Quick Attack
+  icon: {fileID: -225800458953983391, guid: 5817f6b2a8d6d8844b379faac96d5225, type: 3}
+  description: Attack faster
+  table: 2
+  tier: 1
+  index: 0
+  soulRequire: 1
+  runeRequireList: []

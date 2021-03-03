@@ -53,6 +53,6 @@ public class E3_HurtState : HurtState
     }
     public void SetKnockBackDirection(Vector2 attackPosition)
     {
-        knockBackDirection =(Vector2)enemy.aliveGO.transform.position - attackPosition;
+        knockBackDirection =(Vector2)enemy.transform.position - attackPosition;
     }
 }

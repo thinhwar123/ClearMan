@@ -4,37 +4,36 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
+    [SerializeField] private BulletData baseData;
     [SerializeField] private float duration;
-    [SerializeField] private int maxBounce;
-    [SerializeField] private int curBounce;
-    [SerializeField] private Rigidbody2D rb;
-    [SerializeField] private Vector3 lastDirection;
-    [SerializeField] private float maxSpeed;
+    private int curBounce;
+    private Rigidbody2D rb;
+    private Vector3 lastDirection;
+
     public void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
         curBounce = 0;
     }
+    public void Start()
+    {
+        StartCoroutine(StopTravel());
+    }
     public void Update()
     {
         lastDirection = rb.velocity;
     }
-    public void Travel(Vector3 direction, float speed, float maxSpeed)
+    public void Travel(Vector3 direction)
     {
-        this.maxSpeed = maxSpeed;
-        rb.velocity = direction.normalized * speed;
-        StartCoroutine(StopTravel());
-    }
-    public void Travel(Vector3 direction, float speed)
-    {
-        rb.velocity = direction.normalized * speed;
+        rb.velocity = direction.normalized * baseData.bulletSpeed;
+
     }
     public void OnCollisionEnter2D(Collision2D collision)
     {
-        if (curBounce < maxBounce)
+        if (curBounce < baseData.maxBounce)
         {
             Vector2 direction = Vector2.Reflect(lastDirection.normalized, collision.contacts[0].normal);
-            Travel(direction, maxSpeed);
+            Travel(direction);
             curBounce++;
         }
         else

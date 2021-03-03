@@ -1,7 +1,49 @@
 fileFormatVersion: 2
 guid: 63f685f7a06aa644d8d6cae019050c22
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: -6020483373093232672
+    second: Paper-Menu_0
+  - first:
+      213: 3726234812643505761
+    second: Paper-Menu_1
+  - first:
+      213: 127715058195243564
+    second: Paper-Menu_2
+  - first:
+      213: -2172512083127912103
+    second: Paper-Menu_3
+  - first:
+      213: 6836132850740195003
+    second: Paper-Menu_4
+  - first:
+      213: 3132435141753282790
+    second: Paper-Menu_5
+  - first:
+      213: 6855862464075075602
+    second: Paper-Menu_6
+  - first:
+      213: 6613159372531418886
+    second: Paper-Menu_7
+  - first:
+      213: -148937941873725942
+    second: Paper-Menu_8
+  - first:
+      213: -8011899135272669621
+    second: Paper-Menu_9
+  - first:
+      213: 3136116431276786450
+    second: Paper-Menu_10
+  - first:
+      213: 4239860300257640228
+    second: Paper-Menu_11
+  - first:
+      213: 5612627865751094108
+    second: Paper-Menu_12
+  - first:
+      213: 6804644926299267635
+    second: Paper-Menu_13
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -23,6 +65,7 @@ TextureImporter:
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
+  vTOnly: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -40,12 +83,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -54,14 +97,17 @@ TextureImporter:
   textureType: 8
   textureShape: 1
   singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
+  ignorePngGamma: 0
   applyGammaDecoding: 0
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 2048
+    maxTextureSize: 8192
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
@@ -73,7 +119,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Standalone
-    maxTextureSize: 2048
+    maxTextureSize: 8192
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
@@ -85,7 +131,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: iPhone
-    maxTextureSize: 2048
+    maxTextureSize: 8192
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
@@ -97,7 +143,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Android
-    maxTextureSize: 2048
+    maxTextureSize: 8192
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
@@ -109,7 +155,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: WebGL
-    maxTextureSize: 2048
+    maxTextureSize: 8192
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
@@ -121,7 +167,301 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Paper-Menu_0
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 0
+        width: 404
+        height: 270
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0efd1a22542f27ca0800000000000000
+      internalID: -6020483373093232672
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Paper-Menu_1
+      rect:
+        serializedVersion: 2
+        x: 446
+        y: 0
+        width: 405
+        height: 270
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1667f45d1de36b330800000000000000
+      internalID: 3726234812643505761
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Paper-Menu_2
+      rect:
+        serializedVersion: 2
+        x: 877
+        y: 0
+        width: 405
+        height: 270
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c2222343b2cb5c100800000000000000
+      internalID: 127715058195243564
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Paper-Menu_3
+      rect:
+        serializedVersion: 2
+        x: 1361
+        y: 73
+        width: 305
+        height: 142
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 959bae655cfa9d1e0800000000000000
+      internalID: -2172512083127912103
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Paper-Menu_4
+      rect:
+        serializedVersion: 2
+        x: 1793
+        y: 118
+        width: 304
+        height: 52
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bbe6fbdbb92dede50800000000000000
+      internalID: 6836132850740195003
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Paper-Menu_5
+      rect:
+        serializedVersion: 2
+        x: 2227
+        y: 54
+        width: 298
+        height: 189
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 7, y: 7, z: 7, w: 7}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e0a7224a25a87b20800000000000000
+      internalID: 3132435141753282790
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Paper-Menu_6
+      rect:
+        serializedVersion: 2
+        x: 2608
+        y: 0
+        width: 400
+        height: 270
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 22, y: 23, z: 22, w: 14}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2101120569ae42f50800000000000000
+      internalID: 6855862464075075602
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Paper-Menu_7
+      rect:
+        serializedVersion: 2
+        x: 3062
+        y: 0
+        width: 358
+        height: 270
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 607c7ca4969a6cb50800000000000000
+      internalID: 6613159372531418886
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Paper-Menu_8
+      rect:
+        serializedVersion: 2
+        x: 3517
+        y: 0
+        width: 310
+        height: 273
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a0ee9012bbddeedf0800000000000000
+      internalID: -148937941873725942
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Paper-Menu_9
+      rect:
+        serializedVersion: 2
+        x: 3975
+        y: 0
+        width: 260
+        height: 273
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b4e20d17f2400d090800000000000000
+      internalID: -8011899135272669621
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Paper-Menu_10
+      rect:
+        serializedVersion: 2
+        x: 4430
+        y: 0
+        width: 212
+        height: 273
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 213c4844749b58b20800000000000000
+      internalID: 3136116431276786450
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Paper-Menu_11
+      rect:
+        serializedVersion: 2
+        x: 4884
+        y: 0
+        width: 166
+        height: 273
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 42f3326ba7207da30800000000000000
+      internalID: 4239860300257640228
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Paper-Menu_12
+      rect:
+        serializedVersion: 2
+        x: 5342
+        y: 0
+        width: 115
+        height: 273
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c538d829e4f04ed40800000000000000
+      internalID: 5612627865751094108
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Paper-Menu_13
+      rect:
+        serializedVersion: 2
+        x: 5797
+        y: 0
+        width: 71
+        height: 273
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3326bb60284fe6e50800000000000000
+      internalID: 6804644926299267635
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []

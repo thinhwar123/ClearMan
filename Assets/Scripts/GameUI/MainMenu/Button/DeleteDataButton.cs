@@ -1,32 +1,53 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-public class DeleteDataButton : Button
+using UnityEngine.UI;
+using UnityEngine.EventSystems;
+using DG.Tweening;
+public class DeleteDataButton : Selectable, InteractionUI
 {
-    [SerializeField] protected CanvasGroup choosenEffect;
-    [SerializeField] protected SlotSavePanel slotSavePanel;
-    [SerializeField] protected ConfirmPanel confirmPanel;
-    public override void Choose()
+    [SerializeField] private SaveSlotUI saveSlotUI;
+    [SerializeField] private CanvasGroup chooseEffect;
+    private Tween effectTween;
+    public override void OnDeselect(BaseEventData eventData)
     {
-        base.Choose();
-        choosenEffect.alpha = 1;
+        base.OnDeselect(eventData);
+        effectTween.Kill();
+        effectTween = chooseEffect.DOFade(0, 0.3f);
     }
 
-    public override void Start()
+    public override void OnPointerDown(PointerEventData eventData)
     {
-        base.Start();
+        base.OnPointerDown(eventData);
+        TriggerButton();
     }
 
-    public override void TriggerButton()
+    public override void OnPointerEnter(PointerEventData eventData)
     {
-        base.TriggerButton();
-        confirmPanel.DelayStartUI();
+        base.OnPointerEnter(eventData);
+        EventSystem.current.SetSelectedGameObject(this.gameObject);
     }
 
-    public override void UnChoose()
+    public override void OnPointerExit(PointerEventData eventData)
     {
-        base.UnChoose();
-        choosenEffect.alpha = 0;
+        base.OnPointerExit(eventData);
+        EventSystem.current.SetSelectedGameObject(null);
+    }
+
+    public override void OnPointerUp(PointerEventData eventData)
+    {
+        base.OnPointerUp(eventData);
+    }
+
+    public override void OnSelect(BaseEventData eventData)
+    {
+        base.OnSelect(eventData);
+        effectTween.Kill();
+        effectTween = chooseEffect.DOFade(1, 0.3f);
+    }
+
+    public void TriggerButton()
+    {
+        saveSlotUI.ChangePage(2);
     }
 }

@@ -19,14 +19,14 @@ TagManager:
   - Player
   - Wind
   - PhysicalObject
-  - BlockObject
+  - Soulward
   - WeakObject
   - Bullet
   - WaterCheck
   - Enemy
-  - BlockEntity
-  - 
-  - 
+  - InteractionItem
+  - Non_InteractionItem
+  - HitObject
   - 
   - 
   - 
@@ -54,6 +54,12 @@ TagManager:
     locked: 0
   - name: Player
     uniqueID: 1726111647
+    locked: 0
+  - name: Enemy
+    uniqueID: 2849346269
+    locked: 0
+  - name: Item
+    uniqueID: 4192557775
     locked: 0
   - name: UI
     uniqueID: 4292635143

@@ -3,27 +3,39 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using DG.Tweening;
-public class StartButton : Button
+using UnityEngine.EventSystems;
+
+public class StartButton : Selectable, InteractionUI
 {
-    private Tween tween;
-    [SerializeField] MainMenuUI mainMenuUI;
-    public override void Choose()
+    [SerializeField] private MainMenuUI mainMenuUI;
+    public override void OnDeselect(BaseEventData eventData)
     {
-        base.Choose();
-        tween.Kill();
-        tween = buttonImage.DOFade(1, 0.1f);
+        base.OnDeselect(eventData);
     }
 
-    public override void TriggerButton()
+    public override void OnPointerDown(PointerEventData eventData)
     {
-        base.TriggerButton();
-        mainMenuUI.ChangeUIElement(1);
+        base.OnPointerDown(eventData);
+        TriggerButton();
     }
 
-    public override void UnChoose()
+    public override void OnPointerExit(PointerEventData eventData)
     {
-        base.UnChoose();
-        tween.Kill();
-        tween = buttonImage.DOFade(100f/255f, 0.1f);
+        base.OnPointerExit(eventData);
+    }
+
+    public override void OnPointerUp(PointerEventData eventData)
+    {
+        base.OnPointerUp(eventData);
+    }
+
+    public override void OnSelect(BaseEventData eventData)
+    {
+        base.OnSelect(eventData);
+    }
+
+    public void TriggerButton()
+    {
+        mainMenuUI.ChangePage(1);
     }
 }

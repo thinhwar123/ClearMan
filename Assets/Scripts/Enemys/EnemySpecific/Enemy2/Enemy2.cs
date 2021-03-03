@@ -55,15 +55,15 @@ public class Enemy2 : Entity
     public override bool CheckWall()
     {
         Vector2 castDir = Vector2.right * facingDirection;
-        if (aliveGO.transform.eulerAngles.z == 90)
+        if (transform.eulerAngles.z == 90)
         {
             castDir = Vector2.up * facingDirection;
         }
-        else if (aliveGO.transform.eulerAngles.z == 180)
+        else if (transform.eulerAngles.z == 180)
         {
             castDir = Vector2.left * facingDirection;
         }
-        else if (aliveGO.transform.eulerAngles.z == 270)
+        else if (transform.eulerAngles.z == 270)
         {
             castDir = Vector2.down * facingDirection;
         }
@@ -73,15 +73,15 @@ public class Enemy2 : Entity
     public override bool CheckLedge()
     {
         Vector2 castDir = Vector2.down;
-        if (aliveGO.transform.eulerAngles.z == 90)
+        if (transform.eulerAngles.z == 90)
         {
             castDir = Vector2.right ;
         }
-        else if (aliveGO.transform.eulerAngles.z == 180)
+        else if (transform.eulerAngles.z == 180)
         {
             castDir = Vector2.up ;
         }
-        else if (aliveGO.transform.eulerAngles.z == 270)
+        else if (transform.eulerAngles.z == 270)
         {
             castDir = Vector2.left;
         }

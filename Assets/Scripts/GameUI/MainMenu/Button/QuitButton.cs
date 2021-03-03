@@ -3,25 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using DG.Tweening;
-public class QuitButton : Button
+public class QuitButton : Selectable, InteractionUI
 {
-    private Tween tween;
-    public override void Choose()
+    public void TriggerButton()
     {
-        base.Choose();
-        tween.Kill();
-        tween = buttonImage.DOFade(1, 0.1f);
-    }
 
-    public override void TriggerButton()
-    {
-        base.TriggerButton();
-    }
-
-    public override void UnChoose()
-    {
-        base.UnChoose();
-        tween.Kill();
-        tween = buttonImage.DOFade(100f / 255f, 0.1f);
     }
 }

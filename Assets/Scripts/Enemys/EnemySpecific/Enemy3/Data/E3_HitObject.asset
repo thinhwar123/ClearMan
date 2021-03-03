@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: E3_HitObject
   m_EditorClassIdentifier: 
   attackDetails:
-    position: {x: 0, y: 0}
-    attackDamage: 0
+    position: {x: 22.094955, y: 0.8938348}
+    attackDamage: 1
