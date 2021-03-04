@@ -12,4 +12,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a0d3a3caea0a2a4f91a30de06def951, type: 3}
   m_Name: PlayerAbilityInventory
   m_EditorClassIdentifier: 
-  itemList: []
+  itemList:
+  - id: 1
+    itemData: {fileID: 11400000, guid: 010b9d9aa8e7afa469951162858fe6ef, type: 2}
+    count: 1
+  - id: 3
+    itemData: {fileID: 11400000, guid: 4bc66a893133714498d7336c53d72aa8, type: 2}
+    count: 1
+  - id: 1
+    itemData: {fileID: 11400000, guid: 010b9d9aa8e7afa469951162858fe6ef, type: 2}
+    count: 1
+  - id: 0
+    itemData: {fileID: 11400000, guid: abdfb40745ccc7a44925eb1428d731d6, type: 2}
+    count: 1
+  - id: 3
+    itemData: {fileID: 11400000, guid: 4bc66a893133714498d7336c53d72aa8, type: 2}
+    count: 1

@@ -19,10 +19,14 @@ public class Inventory : ScriptableObject,  ISerializationCallbackReceiver
     }
     public void OnAfterDeserialize()
     {
-        for (int i = 0; i < itemList.Count; i++)
+        if (itemDataBase!= null)
         {
-            itemList[i].itemData = itemDataBase.getItem[itemList[i].id];
+            for (int i = 0; i < itemList.Count; i++)
+            {
+                itemList[i].itemData = itemDataBase.getItem[itemList[i].id];
+            }
         }
+
     }
     public void AddItem(ItemData itemData, int count)
     {

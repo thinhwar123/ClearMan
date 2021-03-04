@@ -39,7 +39,7 @@ public class DataGlobe : MonoBehaviour
     private void Start()
     {
         //TODO: Test
-        systemUI.UpdateAttributeUI();
+        //systemUI.UpdateAttributeUI();
     }
     private void Update()
     {
