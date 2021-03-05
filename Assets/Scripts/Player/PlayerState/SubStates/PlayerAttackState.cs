@@ -99,7 +99,16 @@ public class PlayerAttackState : PlayerAbilityState
         }
         else if (detectedEnemy.Length != 0)
         {
-            canBounce = true;
+
+            for (int i = 0; i < detectedEnemy.Length; i++)
+            {
+                if (detectedEnemy[i].CompareTag("Enemy"))
+                {
+                    canBounce = true;
+                    return;
+                }
+                canBounce = false;
+            }
         }
         else if (inputY == 0)
         {
@@ -109,5 +118,9 @@ public class PlayerAttackState : PlayerAbilityState
         {
             canBounce = player.CheckIfTouchingBounceObject(new Vector2(0, inputY));
         }
+    }
+    public bool CheckCanAttack()
+    {
+        return Time.time > startTime + playerData.attackDelayTime;
     }
 }

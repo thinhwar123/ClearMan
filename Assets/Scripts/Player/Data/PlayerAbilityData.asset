@@ -30,9 +30,6 @@ MonoBehaviour:
   changeSoulwardTimeScale: 0.1
   safeUIDistance: 4
   burstRange: 2
-  whatIsWeakObject:
-    serializedVersion: 2
-    m_Bits: 8192
   burstDelayTime: 1
   wingJumpVelocity: 15
   glideVelocity: 3
@@ -46,6 +43,7 @@ MonoBehaviour:
   upForce: 2
   downForce: 4
   bubbleVelocityX: 5
+  attackDelayTime: 0.5
   moveObjectVelocity: 1
   timeHoldInput: 1
   bounceForce: 10
@@ -65,6 +63,7 @@ MonoBehaviour:
   waterDeepCheckRadius: 0.05
   physicalObjectCheckDistance: 0.4
   bounceObjectCheckDistance: 2.5
+  onewayPlatformCheckDistance: 0.1
   whatIsGround:
     serializedVersion: 2
     m_Bits: 256
@@ -82,7 +81,13 @@ MonoBehaviour:
     m_Bits: 65536
   whatIsBounceObject:
     serializedVersion: 2
-    m_Bits: 65792
+    m_Bits: 65536
   whatIsInteractionItem:
     serializedVersion: 2
     m_Bits: 131072
+  whatIsWeakObject:
+    serializedVersion: 2
+    m_Bits: 8192
+  whatIsSpecialPlatform:
+    serializedVersion: 2
+    m_Bits: 1048576

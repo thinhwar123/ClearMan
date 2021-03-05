@@ -76,7 +76,7 @@ public class PlayerInAirState : PlayerState
         {
             stateMachine.ChangeState(player.swimState);
         }
-        else if (attackInput)
+        else if (attackInput && player.attackState.CheckCanAttack())
         {
             stateMachine.ChangeState(player.attackState);
         }

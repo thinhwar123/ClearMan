@@ -6,6 +6,9 @@ TagManager:
   tags:
   - Wind
   - Ground
+  - DisapearPlatform
+  - OnewayPlatform
+  - Enemy
   layers:
   - Default
   - TransparentFX
@@ -27,7 +30,7 @@ TagManager:
   - InteractionItem
   - Non_InteractionItem
   - HitObject
-  - Onewayplatform
+  - SpecialPlatform
   - 
   - 
   - 

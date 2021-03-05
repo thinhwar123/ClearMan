@@ -12,10 +12,12 @@ public class PlayerGroundedState : PlayerState
     protected bool moveObjectInput;
     protected bool attackInput;
     protected bool healInput;
+    protected int inputY;
 
     protected bool isGrounded;
     protected bool isTouchingPhysicalObject;
     protected bool isTouchingInteractionItem;
+    protected RaycastHit2D hitOnewayPlatform;
 
     public PlayerGroundedState(Player player, PlayerStateMachine stateMachine, PlayerAbilityData playerData, string animBoolName) : base(player, stateMachine, playerData, animBoolName)
     {
@@ -27,6 +29,7 @@ public class PlayerGroundedState : PlayerState
         isGrounded = player.CheckIfGrounded();
         isTouchingPhysicalObject = player.CheckIfTouchingPhysicalObject();
         isTouchingInteractionItem = player.CheckIfTouchingInteractionItem();
+        hitOnewayPlatform = player.CheckIfTouchSpecialPlatform();
     }
 
     public override void Enter()
@@ -51,6 +54,7 @@ public class PlayerGroundedState : PlayerState
         moveObjectInput = player.inputHandler.moveObjectInput;
         attackInput = player.inputHandler.attackInput;
         healInput = player.inputHandler.healInput;
+        inputY = player.inputHandler.normalizeInputY;
 
         player.teleportState.ResetCanAim();
 
@@ -85,7 +89,7 @@ public class PlayerGroundedState : PlayerState
                 stateMachine.ChangeState(player.arrowState);
             }
         }
-        else if (attackInput)
+        else if (attackInput && player.attackState.CheckCanAttack())
         {
             stateMachine.ChangeState(player.attackState);
         }
@@ -97,8 +101,14 @@ public class PlayerGroundedState : PlayerState
         {
             player.inAirState.StartCoyoteTime();
             stateMachine.ChangeState(player.inAirState);
-        } 
-
+        }
+        else if (hitOnewayPlatform && inputY == -1)
+        {
+            if (hitOnewayPlatform.transform.CompareTag("OnewayPlatform"))
+            {
+                hitOnewayPlatform.transform.SendMessage("DeactivePlatform");
+            }
+        }
     }
 
     public override void PhysicsUpdate()

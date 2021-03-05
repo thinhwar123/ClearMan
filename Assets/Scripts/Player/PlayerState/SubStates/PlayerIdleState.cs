@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerIdleState : PlayerGroundedState
 {
-    protected int inputY;
+
     protected bool openBookInput;
     protected bool saveInput;
 
@@ -34,7 +34,7 @@ public class PlayerIdleState : PlayerGroundedState
     public override void LogicUpdate()
     {
         base.LogicUpdate();
-        inputY = player.inputHandler.normalizeInputY;
+
         openBookInput = player.inputHandler.openBookInput;
         saveInput = player.inputHandler.saveInput;
 

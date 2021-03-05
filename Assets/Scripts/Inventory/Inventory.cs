@@ -26,7 +26,6 @@ public class Inventory : ScriptableObject,  ISerializationCallbackReceiver
                 itemList[i].itemData = itemDataBase.getItem[itemList[i].id];
             }
         }
-
     }
     public void AddItem(ItemData itemData, int count)
     {

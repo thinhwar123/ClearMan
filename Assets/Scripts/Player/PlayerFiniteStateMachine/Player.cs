@@ -38,7 +38,6 @@ public class Player : MonoBehaviour
     public PlayerStunState stunState { get; private set; }
     [SerializeField] public PlayerAbilityData playerData;
     #endregion
-
     #region Components
     public Animator anim { get; private set; }
     public PlayerInputHandler inputHandler { get; private set; }
@@ -47,7 +46,6 @@ public class Player : MonoBehaviour
     public CapsuleCollider2D playerCollider { get; private set; }
 
     #endregion
-
     #region CheckTranforms
     [SerializeField] private Transform groundCheck;
     [SerializeField] private Transform wallCheck;
@@ -206,10 +204,13 @@ public class Player : MonoBehaviour
             Flip();
         }
     }
-
+    public RaycastHit2D CheckIfTouchSpecialPlatform()
+    {
+        return Physics2D.Raycast(groundCheck.position, Vector2.down, playerData.onewayPlatformCheckDistance, playerData.whatIsSpecialPlatform);
+    }
     public bool CheckIfGrounded()
     {
-        return Physics2D.OverlapCircle(groundCheck.position, playerData.groundCheckRadius, playerData.whatIsGround);
+        return Physics2D.OverlapCircle(groundCheck.position, playerData.groundCheckRadius, playerData.whatIsGround) || CheckIfTouchSpecialPlatform();
     }
     public bool CheckIfTouchingWall()
     {
@@ -282,14 +283,6 @@ public class Player : MonoBehaviour
         transform.localScale = new Vector3(facingDirection, 1, 1);
         soulwardPosition.localScale = new Vector3(facingDirection, 1, 1);
     }
-    public void OpenBook()
-    {
-        //TODO: loi tat inventory = chuot
-        //if (true)
-        //{
-        //    stateMachine.ChangeState(openBookState);
-        //}
-    }
     public void ResetSoulwardPosition()
     {
         if (playerData.soulwardType == 3)
@@ -329,6 +322,15 @@ public class Player : MonoBehaviour
         DataGlobe.instance.playerAttributeData.curHitPoint += playerData.healValue;
         DataGlobe.instance.playerAttributeData.curManaPoint -= playerData.manaUseHeal;
         DataGlobe.instance.systemUI.SetHitPoint();
+        DataGlobe.instance.systemUI.SetManaPoint();
+    }
+    public void GainMana(float manaPoint)
+    {
+        DataGlobe.instance.playerAttributeData.curManaPoint += manaPoint;
+        if (DataGlobe.instance.playerAttributeData.curManaPoint > DataGlobe.instance.playerAttributeData.maxManaPoint)
+        {
+            DataGlobe.instance.playerAttributeData.curManaPoint = DataGlobe.instance.playerAttributeData.maxManaPoint;
+        }
         DataGlobe.instance.systemUI.SetManaPoint();
     }
     public IEnumerator Unvailable()

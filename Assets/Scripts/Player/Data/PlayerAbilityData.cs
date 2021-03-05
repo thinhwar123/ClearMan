@@ -38,7 +38,7 @@ public class PlayerAbilityData : ScriptableObject
 
     [Header("Burst State")]
     public float burstRange = 2f;
-    public LayerMask whatIsWeakObject;
+
     public float burstDelayTime = 1f;
 
     [Header("Wing Jump State")]
@@ -65,6 +65,9 @@ public class PlayerAbilityData : ScriptableObject
     public float downForce = 2;
     public float bubbleVelocityX = 1;
 
+    [Header("Attack State")]
+    public float attackDelayTime = 0;
+
     [Header("Move Object State")]
     public float moveObjectVelocity = 3;
 
@@ -74,7 +77,7 @@ public class PlayerAbilityData : ScriptableObject
     [Header("Bounce State")]
     public float bounceForce = 1f;
     public float bounceTime = 1f;
-
+    
     [Header("Hurt State")]
     public float hurtTimeScale = 1f;
     public Vector2 angle = new Vector2(1, 1);
@@ -97,6 +100,7 @@ public class PlayerAbilityData : ScriptableObject
     public float waterDeepCheckRadius = 10f;
     public float physicalObjectCheckDistance = 1f;
     public float bounceObjectCheckDistance = 1f;
+    public float onewayPlatformCheckDistance = 0.1f;
     public LayerMask whatIsGround;
     public LayerMask whatIsWind;
     public LayerMask whatIsWater;
@@ -104,4 +108,6 @@ public class PlayerAbilityData : ScriptableObject
     public LayerMask whatIsEnemy;
     public LayerMask whatIsBounceObject;
     public LayerMask whatIsInteractionItem;
+    public LayerMask whatIsWeakObject;
+    public LayerMask whatIsSpecialPlatform;
 }
