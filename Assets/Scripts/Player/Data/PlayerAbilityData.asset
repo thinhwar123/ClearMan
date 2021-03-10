@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34e7de6c82113c2438587846625e2e41, type: 3}
   m_Name: PlayerAbilityData
   m_EditorClassIdentifier: 
-  movementVelocity: 10
-  jumpVelocity: 15
+  movementVelocity: 6
+  jumpVelocity: 11.5
   timeJumpHold: 0.5
   amountOfJump: 2
   coyoteTime: 1
@@ -23,9 +23,9 @@ MonoBehaviour:
   wallJumpVelocity: 15
   wallJumpTime: 0.3
   wallJumpAngle: {x: 1, y: 2}
-  dashVelocity: 25
-  dashTime: 0.2
-  delayBetweenDash: 1
+  dashVelocity: 22
+  dashTime: 0.15
+  delayBetweenDash: 0.5
   soulwardType: 3
   changeSoulwardTimeScale: 0.1
   safeUIDistance: 4
